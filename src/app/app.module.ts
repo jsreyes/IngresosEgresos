@@ -10,10 +10,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+// NGRX
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './app.reducer';
+
 // Environments
 import { environment } from '../environments/environment';
-
-
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -45,7 +47,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    StoreModule.forRoot(appReducers)
   ],
   providers: [],
   bootstrap: [AppComponent]
