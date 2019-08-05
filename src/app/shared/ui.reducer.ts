@@ -10,7 +10,7 @@ const initState: State = {
   isLoading: false
 };
 
-export function uiReducer(state = initState, action: fromUI.acciones) {
+export function uiReducer(state = initState, action: fromUI.acciones): State {
 
   switch (action.type) {
 
@@ -26,7 +26,6 @@ export function uiReducer(state = initState, action: fromUI.acciones) {
 
     default:
       return state;
-
   }
 }
 
